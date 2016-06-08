@@ -94,19 +94,19 @@ Let us take a look at the job description file `word_frequency_count.submit`.
 
     log           = job.log
 
-    # Look for machines with stash-cvmfs replica is available 
+    # Look for machines having the replica directory
     +WantsStashCvmfs = true
 
     Queue 1
 
-In this  HTCondor job description file, the keyword `+WantsStashCvmfs = true`  makes HTCondor to look for a worker 
-machine that has stash-cvmfs available. 
+In this  HTCondor job description file, the keyword `+WantsStashCvmfs = true`  makes HTCondor to look for  worker 
+machines where the replicas from public are being updated. 
 
 ## Running the job 
 
 We submit the job using `condor_submit` command as follows
 
-	$ condor_submit word_frequency_count.submit //Submit the condor job 
+	$ condor_submit word_frequency_count.submit  # Submit the condor job 
 
 This job should be finished quickly (less than an hour). You can check the status of the submitted job by using the `condor_q` command as follows
 
