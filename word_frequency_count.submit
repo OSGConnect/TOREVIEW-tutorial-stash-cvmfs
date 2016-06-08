@@ -1,0 +1,12 @@
+Universe = vanilla
+Executable = word_frequency_count.bash
+
+output        = job.out
+error         = job.error
+log           = job.log
+
+requirements = (GLIDEIN_ResourceName == "MWT2" || GLIDEIN_ResourceName == "Nebraska" || GLIDEIN_ResourceName ==  "Sandhills")
+
++WantsStashCvmfs = true
+
+Queue 1
