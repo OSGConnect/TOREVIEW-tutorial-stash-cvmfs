@@ -80,7 +80,7 @@ Let us take a look at the executable script `word_frequency_count.bash`
     do
         echo "-------Word Count for $input_file --------" >> $output_file
         cat $input_file |tr [:space:] '\n' | grep -v "^\s*$" | sort | uniq -c | sort -bnr | head -n 10 >> word_frequency_count.output
-        echo "-------------------------------------------------" >> $output_file
+        echo "------------------------------------------" >> $output_file
     done
 
 The executable script reads each input file directly from the replica location. 
