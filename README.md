@@ -21,7 +21,7 @@ machines. So you need to copy the input data files into the public directory:
 
 	/stash/user/<userid>/public 
 
-where <userid> is your username.  The input files are replicated under   
+where `<userid>` is your username.  The input files are replicated under   
 
       /cvmfs/stash.osgstorage.org/user/<userid>/public 
 
