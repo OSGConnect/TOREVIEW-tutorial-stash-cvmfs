@@ -53,8 +53,8 @@ Here, `word_frequency_count.submit` is the job submission file and `word_frequen
 
 ### Input data 
 
-The input data for the tutorial were copied to the public directory a while ago. As a result, the Stash-CVMFS 
-completed the replication of input data on multiple machines, including the submit node. The command
+The input data for the tutorial were copied to the public directory a while ago. As a result, the input data were replicated
+on multiple machines, including the submit node. The command
 
     $ ls -1 /stash/user/dbala/public/InputBooks/*.txt
 
@@ -69,7 +69,7 @@ shows the list of text files on the replica location as follows:
 
 ## Job execution file
 
-Let us take a look at the  executable script `word_frequency_count.bash`
+Let us take a look at the executable script `word_frequency_count.bash`
 
     #!/bin/bash  # sets up the shell environment (always include this line)
 
@@ -88,7 +88,6 @@ The executable script reads each input file directly from the replica location.
 ## HTCondor job submission file
 
 Let us take a look at the job description file `word_frequency_count.submit`. 
-    
    
     Universe = vanilla
     Executable = word_frequency_count.bash
