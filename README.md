@@ -3,7 +3,7 @@
  
 ## Overview
 
-Stash-CVMFS is a data service for the OSG. Stash-CVMFS allows you to replicate your data on 
+Stash-CVMFS is a data service for the OSG. It allows you to replicate your data on 
 multiple worker machines so that the data is readily available for data intensive jobs. 
 
 When to use stash-cvmfs?
