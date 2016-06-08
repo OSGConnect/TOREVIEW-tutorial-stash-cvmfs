@@ -3,16 +3,17 @@
  
 ## Overview
 
-Stash-CVMFS is a data service for the OSG users. Stash-CVMFS allows you to replicate your data on 
-multiple worker machines so that 
-the data is readily available for data intensive jobs. Due to specific style of CVMFS update, the data 
-replication is a not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the  data well 
-ahead of job submission. 
+Stash-CVMFS is a data service for the OSG. Stash-CVMFS allows you to replicate your data on 
+multiple worker machines so that the data is readily available for data intensive jobs. 
 
 When to use stash-cvmfs?
 
 * Jobs require large input or reference data files (> 500 MB)
 * The same data files are used repeatedly for many separate jobs
+
+Due to the proceedure of CVMFS update, the data replication is a not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the  data well 
+ahead of job submission. 
+
 
 ## How to use stash-cvmfs?
 
