@@ -11,9 +11,7 @@ When to use stash-cvmfs?
 * Jobs require large input or reference data files (> 500 MB)
 * The same data files are used repeatedly for many separate jobs
 
-Due to the proceedure of CVMFS update, the data replication is a not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the  data well 
-ahead of job submission. 
-
+Due to the proceedure of CVMFS update, the data replication is a not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the  data well ahead of job submission.  
 
 ## How to use stash-cvmfs?
 
@@ -105,7 +103,6 @@ Let us take a look at the job description file `word_frequency_count.submit`.
 In this  HTCondor job description file, the keyword `+WantsStashCvmfs = true`  makes HTCondor to look for a worker 
 machine that has stash-cvmfs available. 
 
-
 ## Running the job 
 
 We submit the job using `condor_submit` command as follows
@@ -117,7 +114,6 @@ This job should be finished quickly (less than an hour). You can check the statu
 	$ condor_q username  # The status of the job is printed on the screen. Here, username is your login name.
 
 After the job completed, you will see the output file `word_frequency_count.output` in your work directory.
-
 
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
