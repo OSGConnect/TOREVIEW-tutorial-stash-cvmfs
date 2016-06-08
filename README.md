@@ -11,7 +11,7 @@ When to use stash-cvmfs?
 * Jobs require large input or reference data files (> 500 MB)
 * The same data files are used repeatedly for many separate jobs
 
-Due to the proceedure of CVMFS update, the data replication is a not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the  data well ahead of job submission.  
+Due to the proceedure of CVMFS update, the data replication is not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the data much ahead of job submission.  
 
 ## How to use stash-cvmfs?
 
