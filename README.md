@@ -24,7 +24,7 @@ where `<userid>` is your username.  The input files are replicated under
 
       /cvmfs/stash.osgstorage.org/user/<userid>/public 
 
-on multiple remote machines. You can check the replicated files on the OSG Connect submit node by
+on multiple remote machines, including the OSG Connect submit node. You can check the replicated files on the submit node by
 
      ls /cvmfs/stash.osgstorage.org/user/<userid>/public 
 
