@@ -20,21 +20,21 @@ machines. So you need to copy the input data files into the public directory:
 
 	/stash/user/<userid>/public 
 
-where `<userid>` is your username.  The input files are replicated under   
+where `<userid>` is your username.  The input files are replicated on multiple machines, including the OSG Connect submit node. The location of replica is 
 
       /cvmfs/stash.osgstorage.org/user/<userid>/public 
 
-on multiple remote machines, including the OSG Connect submit node. You can check the replicated files on the submit node by
+ You can check the replicated files on the submit node by
 
      ls /cvmfs/stash.osgstorage.org/user/<userid>/public 
 
 It may take about 1-4 hours for the input data from public to show up on the replica location. 
 
-To access input data on remote worker machine, include the following line in the job's submit script to indicate that CvmfsStash is required:
+To access input data on remote worker machine, include the following line in the HTCondor submit file to indicate that CvmfsStash is required:
 
         +WantsCvmfsStash = true
 
-In your job,  read or copy the input data from the replica 
+In your job execution script,  read or copy the input data from the replica 
 directory `/cvmfs/stash.osgstorage.org/user/<userid>/public`.  Let us see an 
 example in the following tutorial. 
 
@@ -58,7 +58,7 @@ on multiple machines, including the submit node. The command
 
     $ ls -1 /stash/user/dbala/public/InputBooks/*.txt
 
-shows the list of text files on the replica location as follows:
+shows the list of text files on the replica location.
 
     /stash/user/dbala/public/InputBooks/Alices_Adventures_in_Wonderland_by_Lewis_Carroll.txt
     /stash/user/dbala/public/InputBooks/Dracula_by_Bram_Stoker.txt
