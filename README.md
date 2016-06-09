@@ -11,11 +11,11 @@ When to use stash-cvmfs?
 * Jobs require large input or reference data files (> 500 MB)
 * The same data files are used repeatedly for many separate jobs
 
-Due to the proceedure of CVMFS update, the data replication is not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the data much ahead of job submission.  
+Due to the proceedure of CVMFS update, the data replication is not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the data much ahead of a job submission.  
 
 ## How to use stash-cvmfs?
 
-Stash-CVMFS service picks up data from the public directory and replicates the data on multiple remote 
+Stash-CVMFS service picks up the data from the public directory and replicates the data on multiple remote 
 machines. So you need to copy the input data files into the public directory: 
 
 	/stash/user/<userid>/public 
@@ -30,7 +30,7 @@ where `<userid>` is your username.  The input files are replicated on multiple m
 
 It may take about 1-4 hours for the input data from public to show up on the replica location. 
 
-To access input data on remote worker machine, include the following line in the HTCondor submit file to indicate that CvmfsStash is required:
+To access the input data on a remote worker machine, include the following line in the HTCondor submit file to indicate that CvmfsStash is required:
 
         +WantsCvmfsStash = true
 
@@ -58,7 +58,7 @@ on multiple machines, including the submit node. The command
 
     $ ls -1 /stash/user/dbala/public/InputBooks/*.txt
 
-shows the list of text files on the replica location.
+shows the list of text files at the replica location `/stash/user/dbala/public/InputBooks/`:
 
     /stash/user/dbala/public/InputBooks/Alices_Adventures_in_Wonderland_by_Lewis_Carroll.txt
     /stash/user/dbala/public/InputBooks/Dracula_by_Bram_Stoker.txt
@@ -112,7 +112,7 @@ This job should be finished quickly (less than an hour). You can check the statu
 
 	$ condor_q username  # The status of the job is printed on the screen. Here, username is your login name.
 
-After the job completed, you will see the output file `word_frequency_count.output` in your work directory.
+When the job completes, you see the output file `word_frequency_count.output` in your work directory.
 
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
