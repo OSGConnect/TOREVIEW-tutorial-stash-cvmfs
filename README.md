@@ -11,7 +11,7 @@ When to use stash-cvmfs?
 * Jobs require large input or reference data files (> 500 MB)
 * The same data files are used repeatedly for many separate jobs
 
-Due to the proceedure of CVMFS update, the data replication is not instantaneous.  Therefore, to use Stash-CVMFS service, you need to prepare the data much ahead of a job submission.  
+CVMFS requires an updated to propagate through several layers of caching, therefore the data replication is not instantaneous to the worker nodes. To use the Stash-CVMFS service you need to prepare the data potentially hours ahead of a job submission.  
 
 ## How to use stash-cvmfs?
 
@@ -99,18 +99,18 @@ Let us take a look at the job description file `word_frequency_count.submit`.
 
     Queue 1
 
-In this  HTCondor job description file, the keyword `+WantsStashCvmfs = true`  makes HTCondor to look for  worker 
+In this  HTCondor job description file, the keyword `+WantsStashCvmfs = true`  makes HTCondor to look for worker 
 machines where the replicas from public are being updated. 
 
 ## Running the job 
 
 We submit the job using `condor_submit` command as follows
 
-	$ condor_submit word_frequency_count.submit  # Submit the condor job 
+	$ condor_submit word_frequency_count.submit 
 
-This job should be finished quickly (less than an hour). You can check the status of the submitted job by using the `condor_q` command as follows
+This job should be finished quickly (less than an hour). You can check the status of the submitted job by using the `condor_q` command as follows, replacing `<userid>` with your username.
 
-	$ condor_q username  # The status of the job is printed on the screen. Here, username is your login name.
+	$ condor_q <userid>
 
 When the job completes, you see the output file `word_frequency_count.output` in your work directory.
 
